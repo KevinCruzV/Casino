@@ -1,0 +1,68 @@
+header h1{
+    height: 80px;
+    text-align: center;
+    font-size: 30pt;
+    padding-top: 40px;
+    background-color: grey;
+}
+
+.regles{
+    height: 500px;
+    width: 70%;
+    text-align: center;
+    margin: auto;
+    background-color: lightgrey;
+    border-radius: 10px;
+    margin-top: 30px;
+}
+
+.regles p{
+    padding: 30px;
+    font-size: larger;
+}
+
+
+.regles h1{
+    font-style: bold;
+}
+
+button{
+    background-color: greenyellow;
+    outline: none;
+    border-radius: 10px;
+    height: 75px;
+    width: 150px;
+    border: solid white 1px;
+    transition: 0.2s;
+    margin-top: 30px;
+    cursor: pointer;
+
+}
+
+.container{
+    text-align: center;
+}
+
+.container a{
+    text-decoration: none;
+}
+
+button:hover{
+    background-color: white;
+    transition: 0.2s;
+    color: greenyellow;
+    border: solid greenyellow 1px;
+}
+
+.regles h1{
+    font-size: 20pt;
+    padding-top: 15px;
+}
+
+.blackjack{
+    text-align: center;
+}
+
+.blackjack a{
+    text-decoration: none;
+}
