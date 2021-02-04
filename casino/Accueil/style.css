@@ -1,0 +1,56 @@
+body{
+	background-color: #0fa34d;
+}
+
+a{
+	text-decoration: none;
+}
+
+header{
+	height: 150px;
+	background-color: #005724;
+	box-shadow: 0px 7px 30px 5px;
+}
+
+.logo{
+	text-align: center;
+}
+
+.logo img{
+	margin-top: -43px;
+	width: 350px;
+	height: auto;
+}
+
+.container{
+	padding-top: 140px;
+	display: grid;
+	grid-template-columns: 1fr;
+	grid-template-rows: repeat(6, 100px);
+	grid-row-gap: 20px;
+	text-align: center;
+	justify-items: center;
+	margin-bottom: 100px;
+	font-family: 'Mukta Vaani', sans-serif;
+}
+
+.container a{
+	color: white;
+	background-color: #168042;
+	font-size: 25pt;
+	width: 80%;
+	border-radius: 10px;
+	line-height: 100px;
+}
+
+.container a:hover{
+	background-color: #0fa34d;
+	box-shadow: 0px 0px 25px 0px rgba(0,0,0,0.6);
+	border: yellow solid 2px;
+}
+
+footer{
+	height: 150px;
+	background-color: #005724;
+	box-shadow: 0px -7px 30px 5px;
+}

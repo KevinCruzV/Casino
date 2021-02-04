@@ -1,16 +1,21 @@
-.titre{
-	height: 100px;
-	background-color: grey;
-	position: relative;
+body{
+	background-color: #0fa34d;
 }
 
-.titre h1{
+header{
+	height: 150px;
+	background-color: #005724;
+	box-shadow: 0px 7px 30px 5px;
+}
+
+.logo{
 	text-align: center;
-	position: relative;
-	top: 50%;
-	transform: translateY(-50%);
-	color: white;
-	font-size: 20pt;
+}
+
+.logo img{
+	margin-top: -43px;
+	width: 350px;
+	height: auto;
 }
 
 .grid{
@@ -26,12 +31,14 @@
 }
 
 .tapis{
-	background-color: green;
+	background-color: #168042;
 	grid-column: 2 / 5;
 	grid-row: 2 / 8;
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: 1fr 1fr 300px 1fr 1fr;
 	grid-template-rows: repeat(5, 1fr);
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.6);
+	border-radius: 10px;
 }
 
 #tirer{
@@ -50,15 +57,68 @@
 
 .tapis button{
 	height: 50px;
+	color: white;
 	border-radius: 10px;
 	border: none;
 	outline: none;
 	cursor: pointer;
-	background-color: lightgreen;
+	background-color: #0fa34d;
+	width: 150px;
 }
 
 .tapis button:active{
-	background-color: green;
-	color: white;
-	border: solid white 1px;
+	background-color: #168042;
 }
+
+.tapis button:hover{
+	border: yellow solid 1px;
+	box-shadow: 0px 0px 10px 0px rgba(0,0,0,0.6);
+}
+
+footer{
+	height: 150px;
+	background-color: #005724;
+	box-shadow: 0px -7px 30px 5px;
+}
+
+.adv{
+	grid-column: 3;
+	grid-row: 2;
+}
+
+.joueur{
+	grid-column: 3;
+	grid-row: 4;
+}
+
+.deck{
+	grid-column: 4;
+	grid-row: 3;
+}
+.deck{
+	place-self: center;
+}
+
+.joueur{
+	place-self: center;
+}
+
+.adv{
+	place-self: center;
+}
+
+.tapis p{
+	font-size: 20pt;
+	color: white;
+	font-family: 'Mukta Vaani', sans-serif;
+}
+
+.croupier{
+	grid-column: 3;
+	place-self: center;
+}
+
+.joueur1{
+	grid-column: 3;
+	grid-row: 5;
+	place-self: center;
