@@ -1,9 +1,0 @@
-input#tirer{
-    visibility: hidden;
-}
-input#secoucher{
-    visibility: hidden;
-}
-input#jouer {
-    visibility: visible;
-}
