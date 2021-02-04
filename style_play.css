@@ -1,0 +1,48 @@
+header h1{
+    height: 80px;
+    text-align: center;
+    font-size: 30pt;
+    padding-top: 40px;
+    background-color: grey;
+}
+
+.tapis{
+    height: 600px;
+    width: 85%;
+    text-align: center;
+    margin: auto;
+    background-color: green;
+    border-radius: 10px;
+    margin-top: 30px;
+    position: relative;
+    color: lightgrey;
+}
+
+.tapis p{
+    padding: 30px;
+    font-size: larger;
+}
+
+
+.tapis h1{
+    font-style: bold;
+}
+
+.tapis h1{
+    font-size: 20pt;
+    padding-top: 15px;
+}
+
+.blackjack{
+    text-align: center;
+}
+
+.blackjack a{
+    text-decoration: none;
+}
+
+.button{
+    position: absolute;
+    bottom: 0;
+    display: inline-block;
+}
