@@ -130,10 +130,12 @@ footer{
 .win{
 	height: 130px;
 	width: 130px;
+	visibility: hidden;
 }
 
 .lose{
 	height: 130px;
 	width: 130px;
+	visibility: hidden;
 }
 

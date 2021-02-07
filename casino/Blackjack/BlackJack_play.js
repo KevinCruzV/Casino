@@ -130,6 +130,8 @@ var tirer = document.querySelector("#tirer");
 var secoucher = document.querySelector("#rester");
 var joueur = document.querySelector("#joueur");
 var croupier = document.querySelector("#croupier");
+var win = document.querySelector(".win");
+var lose = document.querySelector(".lose")
 
 Deck=initdeck();
 console.log("Deck : ", Deck);
@@ -148,7 +150,9 @@ tirer.addEventListener('click', () => {
     let sommeJ = SommeCarte(MainJoueur);
 
     if(sommeJ > 21){
-        console.log("Perdu ! Vous avez plus de 21. ");
+        console.log("Perdu ! Vous avez plus de 21.");
+        lose.style.visibility = "visible";
+        return 0;
     };
     
 });
@@ -167,30 +171,38 @@ secoucher.addEventListener('click', () => {
 
     if(sommeB > 21){
         console.log(" Gagné ! la banque à plus de 21.");
+        win.style.visibility = "visible";
     };
 
     if(BlackJack(MainOrdi) && BlackJack(MainJoueur)){
 
         console.log("Egalité ! Vous avez tout les deux Black Jack.");
+        return 0;
 
     }else if(BlackJack(MainOrdi) && !BlackJack(MainJoueur)){
 
         console.log("Black Jack pour la Banque. Perdu !");
+        lose.style.visibility = "visible";
+        return 0;
 
     }else if (BlackJack(MainJoueur) && !BlackJack(MainOrdi)){
 
         console.log("Black Jack pour le Joueur. C'est gagné !");
+        win.style.visibility = "visible";
+        return 0;
 
     }else if (!BlackJack(MainOrdi) && !BlackJack(MainOrdi)){
 
         if(sommeJ < sommeB && sommeB < 22 ){
 
             console.log("La Banque a un plus grand jeu que vous. Perdu !");
+            lose.style.visibility = "visible";
 
 
         }else if (sommeJ > sommeB){
 
             console.log("C'est Gagné ! Vous avez un plus gros jeu");
+            win.style.visibility = "visible";
 
 
         }else if(sommeJ == sommeB){
@@ -199,6 +211,8 @@ secoucher.addEventListener('click', () => {
 
 
         };
+
+        return 0;
 
     };
 })
