@@ -213,9 +213,10 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
-
+        // if (carteCache.parentNode){
+        //     carteCache.parentNode.removeChild(carteCache);
+        //     deplaceCarte(croupier,MainOrdi);
+        // }
     };
 
     if(BlackJack(MainOrdi) && BlackJack(MainJoueur)){
@@ -249,8 +250,6 @@ secoucher.addEventListener('click', () => {
     }else if (BlackJack(MainJoueur) && !BlackJack(MainOrdi)){
 
         console.log("Black Jack pour le Joueur. C'est gagné !");
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
         lose.parentNode.removeChild(lose);
         draw.parentNode.removeChild(draw);
         win.style.visibility = "visible";
@@ -258,6 +257,10 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
+        if (carteCache.parentNode){
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
+        }
 
         return 0;
 
@@ -266,8 +269,6 @@ secoucher.addEventListener('click', () => {
         if(sommeJ < sommeB && sommeB < 22 ){
 
             console.log("La Banque a un plus grand jeu que vous. Perdu !");
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
             win.parentNode.removeChild(win);
             draw.parentNode.removeChild(draw);
             lose.style.visibility = "visible";
@@ -275,14 +276,15 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
+            // deplaceCarte(croupier,MainOrdi);
 
 
 
         }else if (sommeJ > sommeB){
 
             console.log("C'est Gagné ! Vous avez un plus gros jeu");
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
+            // carteCache.parentNode.removeChild(carteCache);
+            // deplaceCarte(croupier,MainOrdi);
             lose.parentNode.removeChild(lose);
             draw.parentNode.removeChild(draw);
             win.style.visibility = "visible";
@@ -296,8 +298,8 @@ secoucher.addEventListener('click', () => {
         }else if(sommeJ == sommeB){
 
             console.log(" C'est une égalité ! Vos points sont égaux");
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
+            // carteCache.parentNode.removeChild(carteCache);
+            // deplaceCarte(croupier,MainOrdi);
             lose.parentNode.removeChild(lose);
             win.parentNode.removeChild(win);
             draw.style.visibility = "visible";
