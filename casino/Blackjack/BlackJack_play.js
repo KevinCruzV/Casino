@@ -107,6 +107,7 @@ function BlackJack(main){
 
 function Distrib(unDeck, MainDuJoueur, MainBanque){
     let cache = document.createElement("img");
+    cache.classList.add('carteCache');
     for (let i = 0; i < 2; i++){
 
         PickCard(unDeck, MainDuJoueur);
@@ -123,25 +124,35 @@ function Distrib(unDeck, MainDuJoueur, MainBanque){
 
 }
 
-function envoie(){
-    let pseudo = document.getElementById("text").value;
-    let joueur1 = document.getElementById("joueur1");
-    joueur1.innerHTML = pseudo;
-    document.getElementById("cache").style.display="none";
-}
+// function envoie(){
+//     let pseudo = document.getElementById("text").value;
+//     let joueur1 = document.getElementById("joueur1");
+//     joueur1.innerHTML = pseudo;
+//     document.getElementById("cache").style.display="none";
+// }
 
 
 //   Utilisation du Js    \\
 var Deck;
 var jouer = document.querySelector("#jouer");
 var tirer = document.querySelector("#tirer");
+// var valider = document.querySelector(".valider")
 var secoucher = document.querySelector("#rester");
 var joueur = document.querySelector("#joueur");
 var croupier = document.querySelector("#croupier");
 var tapis = document.querySelector(".tapis");
+var carteCache = document.querySelector(".carteCache");
 var button = document.getElementsByTagName(".tapis button:active");
 var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
+var draw = document.querySelector(".draw");
+
+
+
+// valider.addEventListener('click', () => {
+//     envoie();
+// });
+
 
 
 Deck=initdeck();
@@ -163,11 +174,14 @@ tirer.addEventListener('click', () => {
     if(sommeJ > 21){
         console.log("Perdu ! Vous avez plus de 21.");
         win.parentNode.removeChild(win);
+        draw.parentNode.removeChild(draw);
         lose.style.visibility = "visible";
         document.body.style.background = "#756A6B";
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
 
         
         return 0;
@@ -180,6 +194,7 @@ secoucher.addEventListener('click', () => {
     let sommeJ = SommeCarte(MainJoueur);
     let sommeB = SommeCarte(MainOrdi);
     let img = document.createElement("img");
+    img.classList.add('carteCache');
 
     while(sommeB < 17){
         PickCard(Deck, MainOrdi);
@@ -192,17 +207,25 @@ secoucher.addEventListener('click', () => {
     if(sommeB > 21){
         console.log(" Gagné ! la banque à plus de 21.");
         lose.parentNode.removeChild(lose);
+        draw.parentNode.removeChild(draw);
         win.style.visibility = "visible";
         document.body.style.background = "#756A6B";
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
 
     };
 
     if(BlackJack(MainOrdi) && BlackJack(MainJoueur)){
 
         console.log("Egalité ! Vous avez tout les deux Black Jack.");
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
+        lose.parentNode.removeChild(lose);
+        win.parentNode.removeChild(win);
+        draw.style.visibility = "visible";
         document.body.style.background = "#756A6B";
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
@@ -212,7 +235,10 @@ secoucher.addEventListener('click', () => {
     }else if(BlackJack(MainOrdi) && !BlackJack(MainJoueur)){
 
         console.log("Black Jack pour la Banque. Perdu !");
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
         win.parentNode.removeChild(win);
+        draw.parentNode.removeChild(draw);
         lose.style.visibility = "visible";
         document.body.style.background = "#756A6B";
         tapis.style.background = "#756A6B";
@@ -223,7 +249,10 @@ secoucher.addEventListener('click', () => {
     }else if (BlackJack(MainJoueur) && !BlackJack(MainOrdi)){
 
         console.log("Black Jack pour le Joueur. C'est gagné !");
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
         lose.parentNode.removeChild(lose);
+        draw.parentNode.removeChild(draw);
         win.style.visibility = "visible";
         document.body.style.background = "#756A6B";
         tapis.style.background = "#756A6B";
@@ -237,7 +266,10 @@ secoucher.addEventListener('click', () => {
         if(sommeJ < sommeB && sommeB < 22 ){
 
             console.log("La Banque a un plus grand jeu que vous. Perdu !");
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
             win.parentNode.removeChild(win);
+            draw.parentNode.removeChild(draw);
             lose.style.visibility = "visible";
             document.body.style.background = "#756A6B";
             tapis.style.background = "#756A6B";
@@ -249,7 +281,10 @@ secoucher.addEventListener('click', () => {
         }else if (sommeJ > sommeB){
 
             console.log("C'est Gagné ! Vous avez un plus gros jeu");
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
             lose.parentNode.removeChild(lose);
+            draw.parentNode.removeChild(draw);
             win.style.visibility = "visible";
             document.body.style.background = "#756A6B";
             tapis.style.background = "#756A6B";
@@ -261,6 +296,11 @@ secoucher.addEventListener('click', () => {
         }else if(sommeJ == sommeB){
 
             console.log(" C'est une égalité ! Vos points sont égaux");
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
+            lose.parentNode.removeChild(lose);
+            win.parentNode.removeChild(win);
+            draw.style.visibility = "visible";
             document.body.style.background = "#756A6B";
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
