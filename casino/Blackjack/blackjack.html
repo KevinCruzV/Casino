@@ -15,13 +15,14 @@
 		</div>
 	</header>
 
+
 	<main class="grid">
 		
 
 		<div class="tapis">
 			
-			
-			<!-- <div id="cache">
+<!-- 			
+			<div id="cache">
 				<div class="bg"></div>
 				<div class="regles">
 					<p>Règles du Blackjack</p>
@@ -35,7 +36,7 @@
 
 				<p class="txtpseudo">Entrez votre pseudo:</p>
 				<input type="text" id="text">
-				<input type="button" class="valider" value="valider">
+				<input type="button" class="valider" value="valider" onclick="envoie()">
 			</div> -->
 
 			<button id="tirer">Tirer une autre carte</button>
@@ -63,11 +64,20 @@
 
 		</div>
 	</main>
-	
-	<script src="BlackJack_play.js"></script>
+
 	<footer>
 
 	</footer>
+	
+	<script src="BlackJack_play.js"></script>
+	<!-- <script>
+		function envoie(){
+		let pseudo = document.getElementById("text").value;
+		let joueur1 = document.getElementById("joueur1");
+		joueur1.innerHTML = pseudo;
+		document.getElementById("cache").style.display="none";
+		}
+	</script> -->
 
 
 	

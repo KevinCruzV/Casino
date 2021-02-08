@@ -136,7 +136,8 @@ function Distrib(unDeck, MainDuJoueur, MainBanque){
 var Deck;
 var jouer = document.querySelector("#jouer");
 var tirer = document.querySelector("#tirer");
-// var valider = document.querySelector(".valider")
+// var valider = document.getElementsByClassName("valider");
+//  var valider = document.querySelector(".valider")
 var secoucher = document.querySelector("#rester");
 var joueur = document.querySelector("#joueur");
 var croupier = document.querySelector("#croupier");
@@ -213,10 +214,9 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        // if (carteCache.parentNode){
-        //     carteCache.parentNode.removeChild(carteCache);
-        //     deplaceCarte(croupier,MainOrdi);
-        // }
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
+
     };
 
     if(BlackJack(MainOrdi) && BlackJack(MainJoueur)){
@@ -257,10 +257,9 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        if (carteCache.parentNode){
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
-        }
+        carteCache.parentNode.removeChild(carteCache);
+        deplaceCarte(croupier,MainOrdi);
+    
 
         return 0;
 
@@ -283,8 +282,6 @@ secoucher.addEventListener('click', () => {
         }else if (sommeJ > sommeB){
 
             console.log("C'est Gagné ! Vous avez un plus gros jeu");
-            // carteCache.parentNode.removeChild(carteCache);
-            // deplaceCarte(croupier,MainOrdi);
             lose.parentNode.removeChild(lose);
             draw.parentNode.removeChild(draw);
             win.style.visibility = "visible";
@@ -292,14 +289,14 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
 
 
 
         }else if(sommeJ == sommeB){
 
             console.log(" C'est une égalité ! Vos points sont égaux");
-            // carteCache.parentNode.removeChild(carteCache);
-            // deplaceCarte(croupier,MainOrdi);
             lose.parentNode.removeChild(lose);
             win.parentNode.removeChild(win);
             draw.style.visibility = "visible";
@@ -307,6 +304,8 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
+            carteCache.parentNode.removeChild(carteCache);
+            deplaceCarte(croupier,MainOrdi);
         };
 
         return 0;
