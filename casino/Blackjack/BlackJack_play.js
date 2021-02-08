@@ -83,14 +83,27 @@ function SommeCarte(main){
     return somme;
 }
 
-function deplaceCarte(personne, main){
+function deplaceCarteCroupier(personne, main){
 
     let img = document.createElement("img");
     for(let i = 0; i < main.length; i++){
 
         img.src = main[i].Image
+        img.classList.add("b"+i);
         personne.appendChild(img);
     }
+}
+
+function deplaceCarteJoueur(personne, main){
+
+    let img = document.createElement("img");
+    for(let i = 0; i < main.length; i++){
+    
+        img.src = main[i].Image
+        img.classList.add("j"+i);
+        personne.appendChild(img);
+    }
+    
 
 
 }
@@ -111,64 +124,56 @@ function Distrib(unDeck, MainDuJoueur, MainBanque){
     for (let i = 0; i < 2; i++){
 
         PickCard(unDeck, MainDuJoueur);
-        deplaceCarte(joueur,MainDuJoueur);
+        deplaceCarteJoueur(joueur,MainDuJoueur);
         PickCard(unDeck, MainBanque);
-        // deplaceCarte(croupier,MainBanque);
+        deplaceCarteCroupier(croupier,MainBanque);
 
     }
-
-    deplaceCarte(croupier,MainBanque);
     cache.src = "../Blackjack/cartes/cache.png";
     croupier.appendChild(cache);
 
 
 }
 
-// function envoie(){
-//     let pseudo = document.getElementById("text").value;
-//     let joueur1 = document.getElementById("joueur1");
-//     joueur1.innerHTML = pseudo;
-//     document.getElementById("cache").style.display="none";
-// }
 
 
 //   Utilisation du Js    \\
 var Deck;
 var jouer = document.querySelector("#jouer");
 var tirer = document.querySelector("#tirer");
-// var valider = document.getElementsByClassName("valider");
-//  var valider = document.querySelector(".valider")
 var secoucher = document.querySelector("#rester");
 var joueur = document.querySelector("#joueur");
+var disp = document.querySelector(".b0.b1")
 var croupier = document.querySelector("#croupier");
 var tapis = document.querySelector(".tapis");
-var carteCache = document.querySelector(".carteCache");
 var button = document.getElementsByTagName(".tapis button:active");
 var win = document.querySelector(".win");
 var lose = document.querySelector(".lose");
 var draw = document.querySelector(".draw");
-
-
-
-// valider.addEventListener('click', () => {
-//     envoie();
-// });
-
+var FindePartie = false;
 
 
 Deck=initdeck();
 console.log("Deck : ", Deck);
-Distrib(Deck, MainOrdi, MainJoueur);
+Distrib(Deck, MainJoueur, MainOrdi);
+// disp.style.display = "none";
 console.log("main du Joueur : ", MainJoueur);
 console.log("main de la Banque : ", MainOrdi);
-
+var carteCache = document.querySelector(".carteCache");
 
 tirer.addEventListener('click', () => {
+  
+    
+    if(FindePartie){
+        return;
+    };
+
     PickCard(Deck, MainJoueur);
-    deplaceCarte(joueur, MainJoueur);
+    deplaceCarteJoueur(joueur, MainJoueur);
 
     console.log("Deck : ", Deck);
     console.log("Vous avez maintenant : ", MainJoueur);
+    console.log("main de la Banque : ", MainOrdi);
 
     let sommeJ = SommeCarte(MainJoueur);
 
@@ -181,16 +186,20 @@ tirer.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
-
+        console.log(carteCache);
+        carteCache.remove();
+        disp.style.display = "inline-block";
+        FindePartie = true;
         
-        return 0;
     };
-    
+
+
 });
 
 secoucher.addEventListener('click', () => {
+    if(FindePartie){
+        return;
+    };
 
     let sommeJ = SommeCarte(MainJoueur);
     let sommeB = SommeCarte(MainOrdi);
@@ -199,9 +208,10 @@ secoucher.addEventListener('click', () => {
 
     while(sommeB < 17){
         PickCard(Deck, MainOrdi);
-        img.src = "../Blackjack/cartes/cache.png";
-        croupier.appendChild(img);
+        carteCache.src = "../Blackjack/cartes/cache.png";
+        croupier.appendChild(carteCache);
         console.log("La banque a maintenant : ", MainOrdi);
+        console.log("Vous avez maintenant : ", MainJoueur);
         sommeB = SommeCarte(MainOrdi);
     };
 
@@ -214,16 +224,16 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
+        carteCache.remove();
+        deplaceCarteCroupier(croupier,MainOrdi);
+        FindePartie = true;
 
     };
 
     if(BlackJack(MainOrdi) && BlackJack(MainJoueur)){
 
         console.log("Egalité ! Vous avez tout les deux Black Jack.");
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
+
         lose.parentNode.removeChild(lose);
         win.parentNode.removeChild(win);
         draw.style.visibility = "visible";
@@ -231,13 +241,14 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        return 0;
+        carteCache.remove();
+        deplaceCarteCroupier(croupier,MainOrdi);
+        FindePartie = true;
+        
 
     }else if(BlackJack(MainOrdi) && !BlackJack(MainJoueur)){
 
         console.log("Black Jack pour la Banque. Perdu !");
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
         win.parentNode.removeChild(win);
         draw.parentNode.removeChild(draw);
         lose.style.visibility = "visible";
@@ -245,7 +256,10 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        return 0;
+        carteCache.remove();
+        deplaceCarteCroupier(croupier,MainOrdi);
+        FindePartie = true;
+        
 
     }else if (BlackJack(MainJoueur) && !BlackJack(MainOrdi)){
 
@@ -257,11 +271,10 @@ secoucher.addEventListener('click', () => {
         tapis.style.background = "#756A6B";
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
-        carteCache.parentNode.removeChild(carteCache);
-        deplaceCarte(croupier,MainOrdi);
-    
-
-        return 0;
+        carteCache.remove();
+        deplaceCarteCroupier(croupier,MainOrdi);
+        FindePartie = true;
+        
 
     }else if (!BlackJack(MainOrdi) && !BlackJack(MainOrdi)){
 
@@ -275,7 +288,10 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
-            // deplaceCarte(croupier,MainOrdi);
+            carteCache.remove();
+            deplaceCarteCroupier(croupier,MainOrdi);
+            FindePartie = true;
+            
 
 
 
@@ -289,8 +305,9 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
+            carteCache.remove();
+            deplaceCarteCroupier(croupier,MainOrdi);
+            FindePartie = true;
 
 
 
@@ -304,11 +321,13 @@ secoucher.addEventListener('click', () => {
             tapis.style.background = "#756A6B";
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
-            carteCache.parentNode.removeChild(carteCache);
-            deplaceCarte(croupier,MainOrdi);
+            carteCache.remove();
+            deplaceCarteCroupier(croupier,MainOrdi);
+            FindePartie = true;
+            
         };
 
-        return 0;
 
     };
+
 })
