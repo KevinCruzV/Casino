@@ -188,6 +188,7 @@ tirer.addEventListener('click', () => {
         secoucher.style.background = "#756A6B";
         console.log(carteCache);
         carteCache.remove();
+        var disp = document.querySelector(".b0.b1")
         disp.style.display = "inline-block";
         FindePartie = true;
         
@@ -225,7 +226,8 @@ secoucher.addEventListener('click', () => {
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
         carteCache.remove();
-        deplaceCarteCroupier(croupier,MainOrdi);
+        var disp = document.querySelector(".b0.b1")
+        disp.style.display = "inline-block";
         FindePartie = true;
 
     };
@@ -242,7 +244,8 @@ secoucher.addEventListener('click', () => {
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
         carteCache.remove();
-        deplaceCarteCroupier(croupier,MainOrdi);
+        var disp = document.querySelector(".b0.b1")
+        disp.style.display = "inline-block";
         FindePartie = true;
         
 
@@ -257,7 +260,8 @@ secoucher.addEventListener('click', () => {
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
         carteCache.remove();
-        deplaceCarteCroupier(croupier,MainOrdi);
+        var disp = document.querySelector(".b0.b1")
+        disp.style.display = "inline-block";
         FindePartie = true;
         
 
@@ -272,7 +276,8 @@ secoucher.addEventListener('click', () => {
         tirer.style.background = "#756A6B";
         secoucher.style.background = "#756A6B";
         carteCache.remove();
-        deplaceCarteCroupier(croupier,MainOrdi);
+        var disp = document.querySelector(".b0.b1")
+        disp.style.display = "inline-block";
         FindePartie = true;
         
 
@@ -289,7 +294,8 @@ secoucher.addEventListener('click', () => {
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
             carteCache.remove();
-            deplaceCarteCroupier(croupier,MainOrdi);
+            var disp = document.querySelector(".b0.b1")
+            disp.style.display = "inline-block";
             FindePartie = true;
             
 
@@ -306,7 +312,8 @@ secoucher.addEventListener('click', () => {
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
             carteCache.remove();
-            deplaceCarteCroupier(croupier,MainOrdi);
+            var disp = document.querySelector(".b0.b1")
+            disp.style.display = "inline-block";
             FindePartie = true;
 
 
@@ -322,7 +329,8 @@ secoucher.addEventListener('click', () => {
             tirer.style.background = "#756A6B";
             secoucher.style.background = "#756A6B";
             carteCache.remove();
-            deplaceCarteCroupier(croupier,MainOrdi);
+            var disp = document.querySelector(".b0.b1")
+            disp.style.display = "inline-block";
             FindePartie = true;
             
         };
