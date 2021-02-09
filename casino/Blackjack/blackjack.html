@@ -15,41 +15,67 @@
 		</div>
 	</header>
 
+
 	<main class="grid">
-		<!-- <h1 class="nomdujeux">BlackJack</h1> -->
+		
+
 		<div class="tapis">
-				<button id="tirer">Tirer une autre carte</button>
-				<button id="rester">Se coucher</button>
-				<div class="adv">
+			
+			
+			<div id="cache">
+				<div class="bg"></div>
+				<div class="regles">
+					<p>Règles du Blackjack</p>
+					<br>
+					<p>1: Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, libero! Exercitationem eaque atque unde, eveniet libero rem facilis vero aperiam laudantium esse alias iusto dolorem! Porro vel, nulla nam facilis.</p>
+					<br>
+					<p>2: Lorem, ipsum dolor, sit amet consectetur adipisicing elit. Blanditiis, libero! Exercitationem eaque atque unde, eveniet libero rem facilis vero aperiam laudantium esse alias iusto dolorem! Porro vel, nulla nam facilis.</p>
+				</div>
+
+				<p class="txtpseudo">Entrez votre pseudo:</p>
+				<input type="text" id="text">
+				<input type="button" class="valider" value="valider" onclick="envoie()">
+			</div>
+
+			<button id="tirer">Tirer une autre carte</button>
+			<button id="rester">Se coucher</button>
+			<div class="adv">
 			<div class="main_adv" id="croupier">
-				<!-- <img src="../Blackjack/cartes/2c.gif" alt="">
-				<img src="../Blackjack/cartes/b1fv.png" alt=""> -->
+
 			</div>
 		</div>
 		<div class="joueur">
 			<div class="main_adv" id="joueur">
-				<!-- <img src="../Blackjack/cartes/2c.gif" alt="">
-				<img src="../Blackjack/cartes/2c.gif" alt="">
-				<img src="../Blackjack/cartes/2c.gif" alt="">
-				<img src="../Blackjack/cartes/2c.gif" alt=""> -->
+
 			</div>
 		</div>
 		<div class="deck">
 			<img src="../Blackjack/cartes/cache.png" alt="">
 		</div>
 		<p class="croupier">Croupier</p>
-		<p class="joueur1">Joueur 1</p>
+		<p class="joueur1" id="joueur1">Joueur 1</p>
 		<div class="resultat">
+			<img src="../img/draw.png" alt="" class="draw">
 			<img src="../img/win.png" alt="" class="win">
 			<img src="../img/lose.png" alt="" class="lose">
 		</div>		
 
 		</div>
 	</main>
-	<script src="BlackJack_play.js"></script>
+
 	<footer>
 
 	</footer>
+	
+	<script src="BlackJack_play.js"></script>
+	<script>
+		function envoie(){
+		let pseudo = document.getElementById("text").value;
+		let joueur1 = document.getElementById("joueur1");
+		joueur1.innerHTML = pseudo;
+		document.getElementById("cache").style.display="none";
+		}
+	</script>
 
 
 	

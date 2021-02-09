@@ -139,3 +139,67 @@ footer{
 	visibility: hidden;
 }
 
+.draw{
+	height: 130px;
+	width: 130px;
+	visibility: hidden;
+}
+
+
+
+#cache{
+	grid-column: 1 / 6;
+	grid-row: 1 / 6;
+	z-index: 2;
+	display: grid;
+	grid-template-columns: 1fr 1fr 1fr 1fr 1fr;
+	grid-template-rows: 1fr 1fr 1fr 1fr 1fr;
+}
+
+.bg{
+	grid-column: 1 / 6;
+	grid-row: 1 / 6;
+	border-radius: 10px;
+	background-color: #168042;
+	box-shadow: inset 0px 0px 25px 0px rgba(0,0,0,0.6);
+}
+
+.txtpseudo{
+	font-size: 15pt !important;
+	grid-column: 2;
+	grid-row: 5;
+	place-self: center;
+}
+
+.regles{
+	grid-column: 1 / 6;
+	grid-row: 1  / 5;
+	padding: 20px
+}
+
+.regles{
+	font-size: 45pt;
+}
+
+#text{
+	grid-column: 3;
+	grid-row: 5;
+	place-self: center;
+	border-radius: 10px;
+	height: 20px;
+	outline: none;
+}
+
+.valider{
+	grid-column: 4;
+	grid-row: 5;
+	place-self: center;
+	height: 50px;
+	width: 100px;
+	border-radius: 10px;
+	outline: none;
+}
+
+.b0.b1{
+	display: none;
+}
