@@ -153,10 +153,10 @@ var draw = document.querySelector(".draw");
 var FindePartie = false;
 
 
+
 Deck=initdeck();
 console.log("Deck : ", Deck);
 Distrib(Deck, MainJoueur, MainOrdi);
-// disp.style.display = "none";
 console.log("main du Joueur : ", MainJoueur);
 console.log("main de la Banque : ", MainOrdi);
 var carteCache = document.querySelector(".carteCache");
