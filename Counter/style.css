@@ -122,7 +122,7 @@ a{
 
 .linkedin{
 	display: grid;
-	grid-template-columns: repeat(5, 1fr);
+	grid-template-columns: repeat(6, 1fr);
 	grid-template-rows: 20px 1fr;
 	justify-items: center;
 	
@@ -178,6 +178,11 @@ a{
 	align-self: center;
 }
 
+.thf{
+	grid-column: 6;
+	grid-row: 2;
+	align-self: center;
+}
 
 .container{
 	height: 900px;

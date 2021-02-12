@@ -1,7 +1,6 @@
 //   variables   \\
 
 var Deck;
-var Cartedeb = document.querySelector(".none");
 var jouer = document.querySelector("#jouer");
 var tirer = document.querySelector("#tirer");
 var secoucher = document.querySelector("#rester");
@@ -22,8 +21,7 @@ var Symbolecarte = new Array();
 var MainOrdi = new Array();
 var Deck = new Array();
 
-var ListeC = [1,2];
-var ListeJ = [1,2,3,4]
+
 
 
 //   Fonctions   \\
@@ -110,14 +108,12 @@ function SommeCarte(main){
 
 function AfficheCarteCroupier(personne, main){
 
-    
+    let img = document.createElement("img");
     for(let i = 0; i < main.length; i++){
-        for(let j = 0; j < ListeC.length; j++){
-            let img = document.querySelector("#c"+i);
-            img.src = main[i].Image;
-            img.classList.add("b"+i);
-            personne.appendChild(img);
-        }
+
+        img.src = main[i].Image;
+        img.classList.add("b"+i);
+        personne.appendChild(img);
     }
 }
 
@@ -126,13 +122,12 @@ function AfficheCarteCroupier(personne, main){
 
 function AfficheCarteJoueur(personne, main){
 
+    let img = document.createElement("img");
     for(let i = 0; i < main.length; i++){
-        for(let j = 2; j < ListeJ.length; j++){
-            let img = document.querySelector("#d"+i);
-            img.src = main[i].Image;
-            img.classList.add("j"+i);
-            personne.appendChild(img);
-        }
+    
+        img.src = main[i].Image;
+        img.classList.add("j"+i);
+        personne.appendChild(img);
     }
     
 
@@ -253,7 +248,6 @@ tirer.addEventListener('click', () => {
 
     PickCard(Deck, MainJoueur);
     AfficheCarteJoueur(joueur, MainJoueur);
-    Cartedeb.remove();
     scoreJ.innerHTML = "Score : " +SommeCarte(MainJoueur);
 
     console.log("Deck : ", Deck);

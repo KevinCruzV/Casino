@@ -1,5 +1,5 @@
-//Affichage 6 image en paire   //
-var paireimg = [1,2,3,1,2,3]
+//Affichage 8 image en paire   //
+var paireimg = [1,2,3,4,5,6,7,8,1,2,3,4,5,6,7,8]
 
 // random //
 .map(melange => [melange,Math.random()])
@@ -10,18 +10,15 @@ console.log(paireimg);
 var img = document.getElementsByTagName("img");
 var score = document.getElementById("Score")
 var comptescore = 0
-var scoreaMax = 60
+var scoreaMax = 160
 
 var btn1 = document.getElementById("btn1");
-var btn2 = document.getElementById("btn2");
 
 function btnClick1(){
-    document.location.href="index.html";
+    document.location.href="index3.html";
 }
 
-function btnClick2(){
-    document.location.href="index2.html";
-}
+
 
 //Recuperation images de fond //
 for(let index=0; index<paireimg.length; index++){
@@ -50,7 +47,7 @@ if (cliquer.target.tagName == "IMG"){
 break;
 
 case 2 ://Clique2//
-if (cliquer.target.tagName == "IMG" && cliquer.target != image1){
+if (cliquer.target.tagName == "IMG"&& cliquer.target != image1){
     cliquer.target.src = cliquer.target.srcimgfond;
     fonctionementdujeu = 3;
     console.log("Clique 2 activer #choix image 2");
@@ -63,7 +60,7 @@ if (cliquer.target.tagName == "IMG" && cliquer.target != image1){
 
  
 
-    setTimeout( function () {  //Comparaisons des images//
+    setTimeout( function () { //Comparaisons des images//
         if (image1.src == image2.src ){
             image1.style.opacity= 0
             image2.style.opacity= 0
@@ -71,9 +68,7 @@ if (cliquer.target.tagName == "IMG" && cliquer.target != image1){
             comptescore += 20
             score.textContent = comptescore;
             if(comptescore >= scoreaMax)
-            score.textContent = "n\ Bien jouées, toutes les paires sont trouvées passer au niveau suivant."
-            
-            
+            score.textContent = "Bien joué, tu viens de finir les 3 niveaux passe désormais à un nouveau jeu ou recommencer."
 
           
     }

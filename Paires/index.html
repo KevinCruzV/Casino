@@ -2,10 +2,11 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<link rel="stylesheet" href="style.css">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<link rel="stylesheet" href="style.css">
 	<link rel="stylesheet" href="../reset.css">
-	<title>Document</title>
+	<link rel="shortcut icon" href="../img/logocasino.png">
+	<title>Casino</title>
 </head>
 <body>
 
@@ -21,9 +22,11 @@
 		</div>
 	</header>
 
-	<p>Score: <span id="Score">0</span></p>
 
-	<div class="container">
+	<main class="grid">
+		<div class="container">
+
+		<p class="regles">Règles: trouver les paires</p>
 
 	 <img id="a" src="Images/dos_cartes.png" >
      <img id="b" src="Images/dos_cartes.png" >
@@ -32,20 +35,23 @@
      <img id="e" src="Images/dos_cartes.png" >
      <img id="f" src="Images/dos_cartes.png" >
 
-    </div>
-    <div class="boutons">
 
-    	<input type="button" value="Rejouer" onclick="btnClick1()"> 
-    	<input type="button" value="Niveau suivant" onclick="btnClick2()">
-    </div>
 
-    <footer class="linkedin">
+     	<p class="txtscore">Score: <span id="Score">0</span></p>
+    	<input class="btn1" type="button" value="Rejouer" onclick="btnClick1()"> 
+    	<input class="btn2" type="button" value="Niveau suivant" onclick="btnClick2()">
+
+		</div>
+	</main>
+
+	<footer class="linkedin">
 
 		<a href="https://www.linkedin.com/in/th%C3%A9ophile-mazaud-7087471b8/"><img src="../img/thp.png" alt=""></a>
 		<a href="https://www.linkedin.com/in/isaac-bassene-6b9b531ab/"><img src="../img/isaac.png" alt=""></a>
 		<a href="https://www.linkedin.com/in/kevin-cruz-079527197/"><img src="../img/kevin.png" alt=""></a>
 		<a href="https://www.linkedin.com/in/giovani-labat-724669201/"><img src="../img/giovani.png" alt=""></a>
 		<a href="https://www.linkedin.com/in/gad-sebagh/"><img src="../img/gad.jpg" alt=""></a>
+		<a href="https://www.linkedin.com/in/david-baroukh-4296471b6/"><img src="../img/david.png" alt=""></a>
 
 		<div class="tha">
 		<a href="https://www.linkedin.com/in/th%C3%A9ophile-mazaud-7087471b8/">Théophile Mazaud</a>
@@ -62,9 +68,12 @@
 		<div class="the">
 		<a href="https://www.linkedin.com/in/gad-sebagh/">Gad Sebagh</a>
 		</div>
+		<div class="thf">
+		<a href="https://www.linkedin.com/in/david-baroukh-4296471b6/">David Baroukh</a>
+		</div>
 	</footer>
 
-    <script src="paires.js"></script>
+	<script src="paires.js"></script>
 	
 </body>
 </html>

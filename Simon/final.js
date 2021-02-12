@@ -13,7 +13,7 @@ let CONFIRM_STRICT_MODE = false;
 let joueurAJoué = false;
 let couleursOrdinateur = []; // suite de couleur que l'ordi a choisit aleatoirement
 let couleursJoueur = []; // suite de couleur que le joueur a choisit
-const NB_TOURS_MAX = 8;
+const NB_TOURS_MAX = 7;
 const colorsBtn = [vert, rose, orange, bleu];
 
 scoreBtn.innerHTML = "score :" + score;
