@@ -2,8 +2,8 @@
 <html lang="fr">
 <head>
 	<meta charset="UTF-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="style.css">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
 	<link rel="stylesheet" href="../reset.css">
 	<title>Document</title>
 </head>
@@ -21,31 +21,25 @@
 		</div>
 	</header>
 
+	<p>Score: <span id="Score">0</span></p>
+
 	<div class="container">
 
-		<div id="rouge">
+	 <img id="a" src="Images/dos_cartes.png" >
+     <img id="b" src="Images/dos_cartes.png" >
+     <img id="c" src="Images/dos_cartes.png" >
+     <img id="d" src="Images/dos_cartes.png" >    
+     <img id="e" src="Images/dos_cartes.png" >
+     <img id="f" src="Images/dos_cartes.png" >
 
-		</div>
+    </div>
+    <div class="boutons">
 
-		<div id="bleu">
+    	<input type="button" value="Rejouer" onclick="btnClick1()"> 
+    	<input type="button" value="Niveau suivant" onclick="btnClick2()">
+    </div>
 
-		</div>
-
-		<div id="jaune">
-
-		</div>
-
-		<div id="vert">
-
-		</div>
-
-	</div>
-
-	<input type="checkbox" class="toggle" id="strict">
-	<button class="button" id="start">Go !</button>
-	<div id="score"></div>
-
-	<footer class="linkedin">
+    <footer class="linkedin">
 
 		<a href="https://www.linkedin.com/in/th%C3%A9ophile-mazaud-7087471b8/"><img src="../img/thp.png" alt=""></a>
 		<a href="https://www.linkedin.com/in/isaac-bassene-6b9b531ab/"><img src="../img/isaac.png" alt=""></a>
@@ -70,7 +64,7 @@
 		</div>
 	</footer>
 
-	<script  src="final.js"></script>
+    <script src="paires.js"></script>
 	
 </body>
 </html>

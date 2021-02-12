@@ -89,7 +89,7 @@ function MixDeck(deck){
 
 function PickCard (deck, Main){
     let rand = hasard(deck.length);
-    Main.push(deck[rand])
+    Main.push(deck[rand]);
     deck.splice(rand,1);
 
 }
@@ -111,7 +111,7 @@ function AfficheCarteCroupier(personne, main){
     let img = document.createElement("img");
     for(let i = 0; i < main.length; i++){
 
-        img.src = main[i].Image
+        img.src = main[i].Image;
         img.classList.add("b"+i);
         personne.appendChild(img);
     }
@@ -125,7 +125,7 @@ function AfficheCarteJoueur(personne, main){
     let img = document.createElement("img");
     for(let i = 0; i < main.length; i++){
     
-        img.src = main[i].Image
+        img.src = main[i].Image;
         img.classList.add("j"+i);
         personne.appendChild(img);
     }

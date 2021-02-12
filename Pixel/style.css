@@ -178,59 +178,38 @@ a{
     align-self: center;
 }
 
-.container{
+
+.grid{
+    display : grid;
+    grid-template-columns: repeat(16, 35px);
+    grid-template-rows: repeat(16, 35px); 
+    justify-content: center;
     margin-top: 150px;
-    margin-bottom: 150px;
-    display: grid;
-    grid-template-columns: 1fr 250px 1fr 250px 1fr 250px 1fr 250px 1fr;
-    grid-template-rows: 500px;
-}
-
-.container div{
+    margin-bottom: 50px;
+    grid-gap: 1px;
     border-radius: 10px;
-    border: solid 2px black;
 }
 
-#rouge{
-    grid-column: 2;
-    grid-row: 1;
-    background-color: red;
+.bgc {
+    background: #fafafa;
 }
 
-#bleu{
-    grid-column: 4;
-    grid-row: 1;
-    background-color: blue;
+.draw{
+    background:url(img/stylet.png);
 }
 
-#jaune{
-    grid-column: 6;
-    grid-row: 1;
-    background-color: yellow;
+.bouton{
+    display: flex;
+     justify-content: space-evenly;
+     margin-bottom: 50px;
+     margin-right: 500px;
+     margin-left: 500px;
 }
 
-#vert{
-    grid-column: 8;
-    grid-row: 1;
-    background-color: green;
+.bouton input{
+    height: 50px;
+    width: 150px;
+    border-radius: 10px;
+    border: none;
+    outline: none;
 }
-
-#vert.blanc,
-.blanc {
-  background-color: white;
-} 
-
-#rouge.blanc,
-.blanc {
-  background-color: white;
-} 
-
-#jaune.blanc,
-.blanc {
-  background-color: white;
-} 
-
-#bleu.blanc,
-.blanc {
-  background-color: white;
-} 
