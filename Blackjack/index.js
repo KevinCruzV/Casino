@@ -113,7 +113,7 @@ function AfficheCarteCroupier(personne, main){
     
     for(let i = 0; i < main.length; i++){
         for(let j = 0; j < ListeC.length; j++){
-            let img = document.querySelector("#"+i);
+            let img = document.querySelector("#c"+i);
             img.src = main[i].Image;
             img.classList.add("b"+i);
             personne.appendChild(img);
@@ -128,7 +128,7 @@ function AfficheCarteJoueur(personne, main){
 
     for(let i = 0; i < main.length; i++){
         for(let j = 2; j < ListeJ.length; j++){
-            let img = document.querySelector("#"+i);
+            let img = document.querySelector("#d"+i);
             img.src = main[i].Image;
             img.classList.add("j"+i);
             personne.appendChild(img);
