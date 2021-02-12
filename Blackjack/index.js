@@ -1,6 +1,7 @@
 //   variables   \\
 
 var Deck;
+var Cartedeb = document.querySelector(".none");
 var jouer = document.querySelector("#jouer");
 var tirer = document.querySelector("#tirer");
 var secoucher = document.querySelector("#rester");
@@ -248,6 +249,7 @@ tirer.addEventListener('click', () => {
 
     PickCard(Deck, MainJoueur);
     AfficheCarteJoueur(joueur, MainJoueur);
+    Cartedeb.remove();
     scoreJ.innerHTML = "Score : " +SommeCarte(MainJoueur);
 
     console.log("Deck : ", Deck);
