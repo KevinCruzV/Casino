@@ -115,6 +115,23 @@ footer{
 	place-self: center;
 }
 
+.scorecroupier{
+	grid-column: 3;
+	grid-row: 1;
+	align-self: end;
+	justify-self: center;
+	font-size: 15pt !important;
+}
+
+.scorejoueur{
+	grid-column: 3;
+	grid-row: 5;
+	place-self: center;
+	align-self: start;
+	justify-self: center;
+	font-size: 15pt !important;
+}
+
 .joueur1{
 	grid-column: 3;
 	grid-row: 5;
@@ -201,5 +218,9 @@ footer{
 }
 
 .b0.b1{
+	display: none;
+}
+
+.b0.b2{
 	display: none;
 }
