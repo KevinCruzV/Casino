@@ -12,7 +12,7 @@ var Py;
 
 function resetC(){
     
-    for(let i = 1; i < TabDiv.length; i++){
+    for(let i = 1; i < 257; i++){
         
         TabDiv[i].style.background = "#fafafa";
 
